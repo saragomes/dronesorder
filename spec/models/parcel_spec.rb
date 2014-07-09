@@ -10,7 +10,7 @@ describe Parcel, :type => :model do
   it { validate_uniqueness_of :name }
   it { validate_uniqueness_of :telephone }
   
-  it { have_many :orders }
+  it { have_many :flights }
   it { belong_to :client }
   
 end

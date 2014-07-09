@@ -1,9 +1,31 @@
 Rails.application.routes.draw do
+=begin
+  get 'clients/index'
+
+  get 'clients/new'
+
+  get 'clients/edit'
+
+  get 'clients/create'
+
+  get 'clients/update'
+
+  get 'clients/destroy'
+
+  get 'clients/search'
+=end
+
+  resources :clients, :only => [:index, :create, :update, :destroy, :destroy_multiple] do
+    post :destroy_multiple, :on => :collection
+    get :filter_by_category, :on => :collection
+    post :done, :on => :member
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'clients#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

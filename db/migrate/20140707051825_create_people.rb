@@ -6,7 +6,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :telephone
-      .string :billing_address
+      t.string :billing_address
       t.string :zipcode
       t.string :city
 

@@ -1,0 +1,28 @@
+<!-- Form client -->
+<%= form_for @client = Client.new, :remote => true do |f| %>
+  <div class="modal-body">
+    <% if @client.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+        <ul>
+        <% @client.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.text_field :first_name, {:placeholder => "Prenom"} %>
+    </div>
+    
+    <div class="field">
+      <%= f.text_field :last_name, {:placeholder => "Nom"} %>
+    </div
+
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+    <button type="submit" class="btn btn-primary"><i class="icon-plus"></i> Add</button>
+  </div>
+<% end %>

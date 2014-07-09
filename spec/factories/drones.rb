@@ -1,9 +1,9 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :parcel do
-    client
+  factory :drone do
     sequence(:name) {|n| "name_#{n}" }
-    hectare 4
+    category 1
+    price "9.99"
   end
 end
